@@ -24,9 +24,9 @@
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
-        "../src/assets/js/vkbeautify.js",
-        "../src/assets/js/xml2json.min.js"
+        "../src/assets/js/xml2json.min.js",
+        "../src/assets/js/json2xml.js",
+        "../src/assets/js/sha.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

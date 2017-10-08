@@ -353,6 +353,5 @@ vkbeautify.prototype.sqlmin = function(text) {
 }
 
 window.vkbeautify = new vkbeautify();
-
 })();
 

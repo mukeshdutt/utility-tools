@@ -2,14 +2,16 @@
   <form #formdata="ngForm">
     <div class="body">
       <br>
+      <h3>URI Encoder/Decoder</h3>
+      <br>
       <div>
-        <h3>Input</h3>
+        <h5>Input</h5>
         <textarea name="input" class="form-control" id="input" placeholder="Enter URI to encode or decode..." cols="20" rows="5"
           ngModel></textarea>
       </div>
       <br>
       <div>
-        <h3>Result</h3>
+        <h5>Result</h5>
         <textarea class="form-control" cols="20" rows="5" placeholder="Result will be here..." [(ngModel)]="data.resultText" [ngModelOptions]="{standalone: true}"></textarea>
       </div>
 

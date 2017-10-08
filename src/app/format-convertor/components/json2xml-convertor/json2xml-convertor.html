@@ -1,1 +1,25 @@
-Hi
+<div class="col-md-10">
+
+    <form #formdata="ngForm">
+        <div class="body">
+            <br>
+            <h2>JSON To XML Convertor</h2>
+            <br>
+            <div>
+                <h5>Input</h5>
+                <textarea name="input" class="form-control" placeholder="Enter ugly JSON for beautify..." id="input" cols="20" rows="5" ngModel></textarea>
+            </div>
+            <br>
+            <div>
+                <h5>Result</h5>
+                <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="5" [(ngModel)]="data.resultText"
+                    [ngModelOptions]="{standalone: true}"></textarea>
+            </div>
+
+            <br>
+            <button type="submit" class="btn btn-primary" (click)="convertToXml(formdata)">To XML</button>
+            <br>
+        </div>
+    </form>
+
+</div>
