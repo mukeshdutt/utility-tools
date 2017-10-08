@@ -1,0 +1,24 @@
+<div class="col-md-10">
+
+  <form #formdata="ngForm">
+    <div class="body">
+      <br>
+      <div>
+        <h3>Input</h3>
+        <textarea name="input" class="form-control" placeholder="Enter string to encoded or decoded HTML..." id="input" cols="20"
+          rows="5" ngModel></textarea>
+      </div>
+      <br>
+      <div>
+        
+        <h3>Result</h3>
+        <textarea class="form-control" cols="20" rows="5" placeholder="Result will be here..." [(ngModel)]="data.resultText" [ngModelOptions]="{standalone:true}"></textarea>
+      </div>
+
+      <br>
+      <input type="button" class="btn btn-primary" value="Encode" (click)="encodeHTML(formdata)">
+      <input type="button" class="btn btn-primary" value="Decode" (click)="decodeHTML(formdata)">
+
+    </div>
+  </form>
+</div>

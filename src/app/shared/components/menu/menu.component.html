@@ -1,1 +1,62 @@
-<h1>Menu</h1>
+{{ name }}
+
+<div class="row">
+
+  <div class="col-md-3">
+    <br>
+    <input type="text" name="" id="">
+    <br>
+    <span>
+      <b>Encoder/Decoder</b>
+    </span>
+    <ul>
+      <li>
+        <a [routerLink]="['/base64']">Base64</a>
+      </li>
+      <li>
+        <a [routerLink]="['/url']">URL</a>
+      </li>
+      <li>
+        <a [routerLink]="['/html']">HTML</a>
+      </li>
+    </ul>
+
+    <!-- <span>
+      <b>Hashing</b>
+    </span>
+    <ul>
+      <li>
+        <a [routerLink]="['/base64']">MD5</a>
+      </li>
+      <li>
+        <a [routerLink]="['/url']">SHA</a>
+      </li>
+      <li>
+        <a [routerLink]="['/html']">HMAC</a>
+      </li>
+    </ul> -->
+
+    <span>
+      <b>Formatter</b>
+    </span>
+    <ul>
+      <li>
+        <a [routerLink]="['/xml-formatter']">XML Formatter</a>
+      </li>
+      <li>
+        <a [routerLink]="['/json-formatter']">JSON Formatter</a>
+      </li>
+    </ul>
+
+    <span>
+      <b>Convertor</b>
+    </span>
+    <ul>
+      <li>
+        <a [routerLink]="['/xml2json']">XML2JSON</a>
+      </li>
+      <li>
+        <a [routerLink]="['/json2xml']">JSON2XML</a>
+      </li>
+    </ul>
+  </div>

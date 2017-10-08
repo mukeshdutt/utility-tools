@@ -1,1 +1,23 @@
-<h1>base64 data</h1>
+<div class="col-md-10">
+
+  <form #formdata="ngForm">
+    <div class="body">
+      <br>
+      <div>
+        <h3>Input</h3>
+        <textarea name="input" class="form-control" placeholder="Enter text to encode or decode the string..." id="input" cols="20" rows="5" ngModel></textarea>
+      </div>
+      <br>
+      <div>
+        <h3>Result</h3>
+        <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="5" [(ngModel)]="data.resultText" [ngModelOptions]="{standalone: true}"></textarea>
+      </div>
+
+      <br>
+      <button type="submit" class="btn btn-primary" (click)="stringToBase64(formdata)">Encode</button>
+      <button type="submit" class="btn btn-primary" (click)="base64ToString(formdata)">Decode</button>
+      <br>
+    </div>
+  </form>
+
+</div>

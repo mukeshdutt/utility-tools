@@ -1,6 +1,17 @@
-<app-header></app-header>
-<app-menu></app-menu>
+<div class="container-fluid">
 
-<app-base64></app-base64>
+  <app-header></app-header>
 
-<app-footer></app-footer>
+  <div class="row">
+    <app-menu></app-menu>
+
+    <div class="col-md-10">
+      <div class="body">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+
+</div>

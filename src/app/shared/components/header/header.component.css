@@ -1,0 +1,19 @@
+.header {
+  background: #294e80;
+}
+
+.logo {
+  padding: 2px;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+ul.menu {
+  padding: 2px;
+}
+
+ul.menu>li {
+  display: inline;
+  color: #ffffff;
+  padding: 10px;
+}

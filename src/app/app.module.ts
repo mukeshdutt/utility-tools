@@ -16,17 +16,7 @@ import { HashingModule } from 'app/hashing/hashing.module';
 import { NumberConvertorModule } from 'app/number-convertor/number-convertor.module';
 import { ValidatorModule } from 'app/validator/validator.module';
 import { OtherUtilityModule } from 'app/other-utility/other-utility.module';
-
-// const appRoutes = [
-//   { path: '', redirectTo: 'home', pathMatch: 'full' },
-//   { path: 'home', component: HomeComponent },
-//   { path: 'json-to-xml', component: J2XComponent },
-//   { path: 'json-validator', component: JUtilityComponent },
-//   { path: 'xml-to-json', component: X2JComponent },
-//   { path: 'xml-validator', component: XmlComponent },
-//   { path: 'jquerytest', component: JqueryTestComponent }
-// ]
-// RouterModule.forRoot(appRoutes)
+import { FormatterModule } from 'app/formatter/formatter.module';
 
 @NgModule({
   declarations: [
@@ -36,14 +26,16 @@ import { OtherUtilityModule } from 'app/other-utility/other-utility.module';
     FooterComponent
   ],
   imports: [
+    BrowserModule,
+    RouterModule,
     EncodingModule,
+    FormatterModule,
     EncryptionModule,
     FormatConvertorModule,
     HashingModule,
     NumberConvertorModule,
     ValidatorModule,
-    OtherUtilityModule,
-    BrowserModule
+    OtherUtilityModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
