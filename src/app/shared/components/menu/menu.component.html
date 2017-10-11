@@ -1,58 +1,48 @@
-<div class="row">
-
-  <div class="col-md-3">
-    <br>    
-    <span>
-      <b>Encoder/Decoder</b>
-    </span>
-    <ul>
-      <li>
-        <a [routerLink]="['/base64']">Base64</a>
-      </li>
-      <li>
-        <a [routerLink]="['/url']">URL</a>
-      </li>
-      <li>
-        <a [routerLink]="['/html']">HTML</a>
-      </li>
-    </ul>
-
-    <!-- <span>
-      <b>Hashing</b>
-    </span>
-    <ul>
-      <li>
-        <a [routerLink]="['/base64']">MD5</a>
-      </li>
-      <li>
-        <a [routerLink]="['/url']">SHA</a>
-      </li>
-      <li>
-        <a [routerLink]="['/html']">HMAC</a>
-      </li>
-    </ul> -->
-
-    <span>
-      <b>Formatter</b>
-    </span>
-    <ul>
-      <li>
-        <a [routerLink]="['/xml-formatter']">XML Formatter</a>
-      </li>
-      <li>
-        <a [routerLink]="['/json-formatter']">JSON Formatter</a>
-      </li>
-    </ul>
-
-    <span>
-      <b>Convertor</b>
-    </span>
-    <ul>
-      <li>
-        <a [routerLink]="['/xml2json']">XML2JSON</a>
-      </li>
-      <li>
-        <a [routerLink]="['/json2xml']">JSON2XML</a>
-      </li>
-    </ul>
+<div class="col-md-12">
+  <div class="box box-solid" style="font-size: 12px">
+    <div class="box-body no-padding">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active">
+          <a [routerLink]="['/xml-formatter']">XML Beautifier</a>
+        </li>
+        <li>
+          <a [routerLink]="['/json-formatter']">JSON Beautifier</a>
+        </li>
+        <li>
+          <a [routerLink]="['/xml2json']">XML To JSON</a>
+        </li>
+        <li>
+          <a [routerLink]="['/json2xml']">JSON To XML</a>
+        </li>
+        <li>
+          <a [routerLink]="['/json2xml']">Xml Validator</a>
+        </li>
+        <li>
+          <a [routerLink]="['/json2xml']">JSON Validator</a>
+        </li>
+        <li>
+          <a [routerLink]="['/json2xml']">MD5 Hashing</a>
+        </li>
+        <li>
+          <a [routerLink]="['/json2xml']">SHA Hashing</a>
+        </li>
+        <li>
+          <a [routerLink]="['/json2xml']">HMAC Hashing</a>
+        </li>
+        <li>
+          <a [routerLink]="['/base64']">Base64 Encoding</a>
+        </li>
+        <li>
+          <a [routerLink]="['/url']">URL Encoding</a>
+        </li>
+        <li>
+          <a [routerLink]="['/html']">HTML Encoding</a>
+        </li>
+        <li>
+          <a [routerLink]="['/json2xml']">More...</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.box-body -->
   </div>
+</div>

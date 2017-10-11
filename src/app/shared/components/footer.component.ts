@@ -4,7 +4,10 @@ import { Component } from '@angular/core';
     selector: 'app-footer',
     template: `
     <div class="row">
-        <div class="footer">Footer</div>
+        <div class="footer">
+            <div class="col-md-offset-1 col-md-5">Developed @ Oxigen in 2017</div>
+            <div class="col-md-offset-2 col-md-4">Version 1.0.0</div>
+        </div>
     </div>
     `,
     styles: [`

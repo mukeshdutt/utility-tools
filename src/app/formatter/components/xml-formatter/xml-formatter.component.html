@@ -1,26 +1,52 @@
-<div class="col-md-10">
-
-  <form #formdata="ngForm">
-    <div class="body">
-      <br>
-      <h2>XML Formatter</h2>
-      <br>
-      <div>
-        <h3>Input</h3>
-        <textarea name="input" class="form-control" placeholder="Enter ugly XML for beautify..." id="input" cols="20" rows="5" ngModel></textarea>
-      </div>
-      <br>
-      <div>
-        <h3>Result</h3>
-        <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="5" [(ngModel)]="data.resultText"
+<form #formdata="ngForm">
+  <div class="col-md-7">
+      <h3>XML Formatter</h3>
+      <hr>
+    <div class="nav-tabs-custom">
+      <ul class="nav nav-tabs">
+        <li>
+          <a href="#tab_1" data-toggle="tab">Input Text</a>
+        </li>
+        <li class="active">
+          <a href="#tab_2" data-toggle="tab">Result Text</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane" id="tab_1">
+          <textarea name="input" class="form-control" placeholder="Enter ugly XML for beautify..." id="input" cols="20" rows="5" ngModel></textarea>
+        </div>
+        <!-- /.tab-pane -->
+        <div class="tab-pane active" id="tab_2">
+          <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="5" [(ngModel)]="data.resultText"
           [ngModelOptions]="{standalone: true}"></textarea>
+        </div>
       </div>
-
-      <br>
-      <button type="submit" class="btn btn-primary" (click)="makeBeautify(formdata)">Beautify</button>
-      <button type="submit" class="btn btn-primary" (click)="makeMinify(formdata)">Minify</button>
-      <br>
+      <!-- /.tab-content -->
     </div>
-  </form>
+  </div>
 
-</div>
+  <div class="col-md-3">
+
+    <div class="box box-solid">
+      <div class="box-header with-border">
+        <h3 class="box-title">Options</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body text-center">
+      </div>
+      <!-- /.box-body -->
+    </div>
+
+    <div class="box box-solid">
+      <div class="box-header with-border">
+        <h3 class="box-title">Actions</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <button type="submit" class="btn btn-primary" (click)="makeBeautify(formdata)">Beautify</button>
+        <button type="submit" class="btn btn-primary" (click)="makeMinify(formdata)">Minify</button>
+      </div>
+      <!-- /.box-body -->
+    </div>
+  </div>
+</form>

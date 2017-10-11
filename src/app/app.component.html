@@ -2,11 +2,16 @@
 
   <app-header></app-header>
 
+  <div class="row"></div>
+  
   <div class="row">
-  <app-menu></app-menu>
-
-    <div class="col-md-10">
-      <div class="body">
+    <div class="contentdata">
+      <div class="col-md-12">
+  
+        <div class="col-md-2">
+          <app-menu></app-menu>
+        </div>
+        
         <router-outlet></router-outlet>
       </div>
     </div>

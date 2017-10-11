@@ -1,24 +1,52 @@
-<div class="col-md-10">
-  <form #formdata="ngForm">
-    <div class="body">
-      <br>
-      <h3>URI Encoder/Decoder</h3>
-      <br>
-      <div>
-        <h5>Input</h5>
-        <textarea name="input" class="form-control" id="input" placeholder="Enter URI to encode or decode..." cols="20" rows="5"
+<form #formdata="ngForm">
+  <div class="col-md-7">
+      <h3>URL Encoding</h3>
+      <hr>
+    <div class="nav-tabs-custom">
+      <ul class="nav nav-tabs">
+        <li>
+          <a href="#tab_1" data-toggle="tab">Input Text</a>
+        </li>
+        <li class="active">
+          <a href="#tab_2" data-toggle="tab">Result Text</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane" id="tab_1">
+          <textarea name="input" class="form-control" id="input" placeholder="Enter URI to encode or decode..." cols="20" rows="15"
           ngModel></textarea>
+        </div>
+        <!-- /.tab-pane -->
+        <div class="tab-pane active" id="tab_2">
+          <textarea class="form-control" cols="20" rows="15" placeholder="Result will be here..." [(ngModel)]="data.resultText" [ngModelOptions]="{standalone: true}"></textarea>
+        </div>
       </div>
-      <br>
-      <div>
-        <h5>Result</h5>
-        <textarea class="form-control" cols="20" rows="5" placeholder="Result will be here..." [(ngModel)]="data.resultText" [ngModelOptions]="{standalone: true}"></textarea>
-      </div>
-
-      <br>
-      <input type="button" class="btn btn-primary" value="Encode" (click)="simpleToEncodedUrl(formdata)">
-      <input type="button" class="btn btn-primary" value="Decode" (click)="encodedToSimpleUrl(formdata)">
-      <br>
+      <!-- /.tab-content -->
     </div>
-  </form>
-</div>
+  </div>
+
+  <div class="col-md-3">
+
+    <div class="box box-solid">
+      <div class="box-header with-border">
+        <h3 class="box-title">Options</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body text-center">
+      </div>
+      <!-- /.box-body -->
+    </div>
+
+    <div class="box box-solid">
+      <div class="box-header with-border">
+        <h3 class="box-title">Actions</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <input type="button" class="btn btn-primary" value="Encode" (click)="simpleToEncodedUrl(formdata)">
+        <input type="button" class="btn btn-primary" value="Decode" (click)="encodedToSimpleUrl(formdata)">
+      </div>
+      <!-- /.box-body -->
+    </div>
+  </div>
+</form>

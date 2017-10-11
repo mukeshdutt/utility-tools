@@ -1,1 +1,81 @@
-/* You can add global styles to this file, and also import other style files */
+body, div, p, ul, li, h1, h2, h3, h4, h5, h6, b {
+    padding: 0;
+    margin: 0;    
+}
+
+body {
+    height: 100%;
+    position: relative;     
+}
+
+textarea{
+    resize: none;
+    border: 1px solid #294e80
+}
+
+/* Header */
+
+.header {
+    color: #ffffff;
+    background: #294e80;
+    font-family: 'Encode Sans Expanded', sans-serif;
+}
+
+.logo {
+    padding: 7px 12px 7px 30px;
+    font-size: 20px;
+    float: left;
+}
+
+.quote{
+    padding-top: 17px;
+    font-size: 10px;
+    color: #c6dff5;
+    float:left;
+}
+
+.menu{
+    padding-top: 15px;
+    font-size: 13px;
+}
+
+ul.menu>li {
+    display: inline;
+    padding: 0 11px;
+}
+
+ul.menu>li>a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+ul.menu>li>a:hover {
+    color: #e9743e;
+}
+
+.left-menu{
+    background: #222d32;
+}
+
+.contentdata{
+    height: 580px;;
+    padding-top: 20px;
+    background: #ecf0f5;
+    width: 100%;
+    overflow: hidden;
+}
+
+.footer {
+    width: 100%;
+    border-top: 1px dashed #ffffff;
+    height: 30px;
+    background: #294e80;
+    color: #ffffff;
+    font-size: 12px;
+    bottom: 0;
+    position: absolute;
+}
+
+.footer > div {
+    padding-top: 7px;
+}

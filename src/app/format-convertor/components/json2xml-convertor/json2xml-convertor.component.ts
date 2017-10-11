@@ -1,8 +1,6 @@
 import { Component } from '@angular/core'
 import { NgForm } from '@angular/forms';
 
-import { json2xml } from 'json2xml'
-
 @Component({
     selector: 'app-json2xml-convertor',
     templateUrl: 'json2xml-convertor.html'
