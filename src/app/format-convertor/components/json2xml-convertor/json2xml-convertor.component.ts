@@ -1,6 +1,8 @@
 import { Component } from '@angular/core'
 import { NgForm } from '@angular/forms';
 
+declare var X2JS: any;
+
 @Component({
     selector: 'app-json2xml-convertor',
     templateUrl: 'json2xml-convertor.html'
@@ -8,16 +10,15 @@ import { NgForm } from '@angular/forms';
 export class Json2XmlConvertorComponent {
 
     data = { resultText: '' }
-
     xml2json: any;
 
     constructor() {
+        this.xml2json = new X2JS()
     }
 
     convertToXml(form: NgForm) {
         let input = form.value.input;
-        console.log(decodeURIComponent(this.xml2json.json2xml("{'name':'mukesh','email':'mukeshdutt@gmail.com'}")))
-
-        this.data.resultText = "" // JSON.stringify(this.xml2json.json2xml_str(input));
+        let json = this.xml2json.json2xml_str(JSON.parse(input));
+        this.data.resultText = json;
     }
 }

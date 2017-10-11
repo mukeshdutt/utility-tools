@@ -1,6 +1,6 @@
 <form #formdata="ngForm">
     <div class="col-md-7">
-        <h3>XML Formatter</h3>
+        <h3>HMAC Hashing</h3>
         <hr>
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
@@ -13,7 +13,7 @@
             </ul>
             <div class="tab-content">
                 <div class="tab-pane" id="tab_1">
-                    <textarea name="input" class="form-control" placeholder="Enter plain text for MD5..." id="input" cols="20" rows="5" ngModel></textarea>
+                    <textarea name="input" class="form-control" placeholder="Enter plain text for HMAC..." id="input" cols="20" rows="5" ngModel></textarea>
                 </div>
                 <!-- /.tab-pane -->
                 <div class="tab-pane active" id="tab_2">
@@ -23,6 +23,9 @@
             </div>
             <!-- /.tab-content -->
         </div>
+
+        <input type="text" id="hmacKey" name="hmacKey" ngModel>
+
     </div>
 
     <div class="col-md-3">
@@ -30,6 +33,20 @@
         <div class="box box-solid">
             <div class="box-header with-border">
                 <h3 class="box-title">Options</h3>
+
+                <div class="col-md-10">
+                    <select name="mode" id="mode" class="form-control" ngModel>
+                        <option value="MD5">HMACw with MD5</option>
+                        <option value="SHA-1">HMAC with SHA-1</option>
+                        <option value="SHA-256">HMAC with SHA-256</option>
+                        <option value="SHA3-256">HMAC with SHA3-256</option>
+                        <option value="SHA-384">HMAC with SHA-384</option>
+                        <option value="SHA3-384">HMAC with SHA3-384</option>
+                        <option value="SHA-512">HMAC with SHA-512</option>
+                        <option value="SHA3-512">HMAC with SHA3-512</option>
+                    </select>
+                </div>
+
             </div>
             <!-- /.box-header -->
             <div class="box-body text-center">
@@ -43,7 +60,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <button type="submit" class="btn btn-primary" (click)="makeMd5(formdata)">Make MD5</button>
+                <button type="submit" class="btn btn-primary" (click)="getHMAC(formdata)">Make HMAC</button>
             </div>
             <!-- /.box-body -->
         </div>

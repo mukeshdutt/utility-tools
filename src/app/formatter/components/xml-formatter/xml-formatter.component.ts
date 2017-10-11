@@ -16,13 +16,10 @@ export class XmlFormatterComponent {
   makeBeautify(form: NgForm) {
     let input = form.value.input
     this.data.resultText = pd.xml(input);
-    console.log(pd.xml(input));
   }
 
   makeMinify(form: NgForm) {
     let input = form.value.input
     this.data.resultText = pd.xmlmin(input, '');
-    console.log(pd.xmlmin(input, ''));
   }
-
 }

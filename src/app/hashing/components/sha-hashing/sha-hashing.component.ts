@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NgForm } from '@angular/Forms';
 
 declare var jsSHA: any;
 
@@ -6,18 +7,25 @@ declare var jsSHA: any;
   selector: 'app-sha-hashing',
   templateUrl: 'sha-hashing.component.html'
 })
-export class ShaHashingComponent implements OnInit {
+export class ShaHashingComponent {
 
-  shaObj: any
-  result: string
+  shaObject: any;
+  data = { resultText: '' }
 
-  constructor() {
-    this.shaObj = new jsSHA('SHA-512', 'TEXT');
-    this.shaObj.update('This is test text');
-    this.result = this.shaObj.getHash('HEX');
+  constructor() { }
+
+  private getSHAHashed(form: NgForm) {
+
+    let mode: string = form.value.mode;
+    let input: string = form.value.input;
+
+    if (!mode) {
+      alert('No mode selected..');
+      return
+    }
+
+    this.shaObject = new jsSHA(mode, 'TEXT');
+    this.shaObject.update(input);
+    this.data.resultText = this.shaObject.getHash('HEX');
   }
-
-  ngOnInit() {
-  }
-
 }

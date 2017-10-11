@@ -1,24 +1,22 @@
 import { Component } from '@angular/core';
-import { Md5 } from 'ts-md5/dist/md5'
+import { NgForm } from '@angular/forms';
+
+declare var md5: any;
 
 @Component({
   selector: 'app-md5-hashing',
   templateUrl: 'md5-hashing.component.html',
-  providers: [Md5]
+  providers: []
 })
 export class MD5HashingComponent {
 
-  restult: any
+  data = { resultText: '' }
 
-  constructor(private _md5: Md5) { }
+  constructor() {
+  }
 
-  DoMd5() {
-    let input: string = ""
-    console.log(input);
-    this.restult = Md5.hashStr(input);
-
-    let blog: Blob = new Blob()
-
-    console.log(this._md5.appendAsciiStr('hello').end())
+  makeMd5(form: NgForm) {
+    let input: string = form.value.input;
+    this.data.resultText = md5(input);
   }
 }

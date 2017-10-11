@@ -14,7 +14,6 @@ import { EncryptionModule } from 'app/encryption/encryption.module';
 import { FormatConvertorModule } from 'app/format-convertor/format-convertor.module';
 import { HashingModule } from 'app/hashing/hashing.module';
 import { NumberConvertorModule } from 'app/number-convertor/number-convertor.module';
-import { ValidatorModule } from 'app/validator/validator.module';
 import { OtherUtilityModule } from 'app/other-utility/other-utility.module';
 import { FormatterModule } from 'app/formatter/formatter.module';
 
@@ -34,7 +33,6 @@ import { FormatterModule } from 'app/formatter/formatter.module';
     FormatConvertorModule,
     HashingModule,
     NumberConvertorModule,
-    ValidatorModule,
     OtherUtilityModule    
   ],
   providers: [],

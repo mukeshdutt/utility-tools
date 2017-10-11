@@ -1,7 +1,7 @@
 <form #formdata="ngForm">
   <div class="col-md-7">
-      <h3>JSON Formatter</h3>
-      <hr>
+    <h3>JSON Formatter</h3>
+    <hr>
     <div class="nav-tabs-custom">
       <ul class="nav nav-tabs">
         <li>
@@ -18,7 +18,7 @@
         <!-- /.tab-pane -->
         <div class="tab-pane active" id="tab_2">
           <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="5" [(ngModel)]="data.resultText"
-          [ngModelOptions]="{standalone: true}"></textarea>
+            [ngModelOptions]="{standalone: true}"></textarea>
         </div>
       </div>
       <!-- /.tab-content -->
@@ -43,6 +43,7 @@
       </div>
       <!-- /.box-header -->
       <div class="box-body">
+        <button type="submit" class="btn btn-primary" (click)="makeMinify(formdata)">Validate</button>
         <button type="submit" class="btn btn-primary" (click)="makeBeautify(formdata)">Beautify</button>
         <button type="submit" class="btn btn-primary" (click)="makeMinify(formdata)">Minify</button>
       </div>
