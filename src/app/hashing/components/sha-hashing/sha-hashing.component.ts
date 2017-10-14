@@ -5,7 +5,7 @@ declare var jsSHA: any;
 
 @Component({
   selector: 'app-sha-hashing',
-  templateUrl: 'sha-hashing.component.html'
+  templateUrl: 'sha-hashing.component.html',
 })
 export class ShaHashingComponent {
 

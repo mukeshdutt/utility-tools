@@ -1,7 +1,6 @@
 <form #formdata="ngForm">
   <div class="col-md-7">
-      <h3>SHA Hashing</h3>
-      <hr>
+      <p class="utility-heading">SHA Hashing</p>
       <div class="nav-tabs-custom">
           <ul class="nav nav-tabs">
               <li class="active">
@@ -12,12 +11,12 @@
               </li>
           </ul>
           <div class="tab-content">
-              <div class="tab-pane" id="tab_1">
-                  <textarea name="input" class="form-control" placeholder="Enter plain text for HMAC..." id="input" cols="20" rows="5" ngModel></textarea>
+              <div class="tab-pane active" id="tab_1">
+                  <textarea name="input" class="form-control" placeholder="Enter plain text for HMAC..." id="input" cols="20" rows="18" ngModel></textarea>
               </div>
               <!-- /.tab-pane -->
-              <div class="tab-pane active" id="tab_2">
-                  <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="5" [(ngModel)]="data.resultText"
+              <div class="tab-pane" id="tab_2">
+                  <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="18" [(ngModel)]="data.resultText"
                       [ngModelOptions]="{standalone: true}"></textarea>
               </div>
           </div>
@@ -31,22 +30,24 @@
       <div class="box box-solid">
           <div class="box-header with-border">
               <h3 class="box-title">Options</h3>
-
-              <div class="col-md-10">
-                <select name="mode" id="mode" class="form-control" ngModel>
-                  <option value="SHA-1">SHA-1</option>
-                  <option value="SHA-256">SHA-256</option>
-                  <option value="SHA3-256">SHA3-256</option>
-                  <option value="SHA-384">SHA-384</option>
-                  <option value="SHA3-384">SHA3-384</option>
-                  <option value="SHA-512">SHA-512</option>
-                  <option value="SHA3-512">SHA3-512</option>
-                </select>
-              </div>
-
           </div>
+          
           <!-- /.box-header -->
-          <div class="box-body text-center">
+          <div class="box-body">
+              <div class="box-body options">
+                    <div class="form-group">
+                        <label for="mode">Hashing Mode</label>
+                        <select name="mode" id="mode" class="form-control" ngModel>
+                            <option value="SHA-1">SHA-1</option>
+                            <option value="SHA-256">SHA-256</option>
+                            <option value="SHA3-256">SHA3-256</option>
+                            <option value="SHA-384">SHA-384</option>
+                            <option value="SHA3-384">SHA3-384</option>
+                            <option value="SHA-512">SHA-512</option>
+                            <option value="SHA3-512">SHA3-512</option>
+                        </select>
+                        </div>
+              </div>
           </div>
           <!-- /.box-body -->
       </div>
@@ -58,6 +59,8 @@
           <!-- /.box-header -->
           <div class="box-body">
               <button type="submit" class="btn btn-primary" (click)="getSHAHashed(formdata)">Make SHA</button>
+              <hr>
+              <button type="submit" class="btn btn-primary">Sample String</button>
           </div>
           <!-- /.box-body -->
       </div>

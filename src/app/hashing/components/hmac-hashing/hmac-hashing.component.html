@@ -1,55 +1,59 @@
 <form #formdata="ngForm">
     <div class="col-md-7">
-        <h3>HMAC Hashing</h3>
-        <hr>
+        <p class="utility-heading">HMAC Hashing</p>
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
-                <li>
+                <li class="active">
                     <a href="#tab_1" data-toggle="tab">Input Text</a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="#tab_2" data-toggle="tab">Result Text</a>
                 </li>
             </ul>
             <div class="tab-content">
-                <div class="tab-pane" id="tab_1">
-                    <textarea name="input" class="form-control" placeholder="Enter plain text for HMAC..." id="input" cols="20" rows="5" ngModel></textarea>
+                <div class="tab-pane active" id="tab_1">
+                    <textarea name="input" class="form-control" placeholder="Enter plain text for HMAC..." id="input" cols="20" rows="18" ngModel></textarea>
                 </div>
                 <!-- /.tab-pane -->
-                <div class="tab-pane active" id="tab_2">
-                    <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="5" [(ngModel)]="data.resultText"
+                <div class="tab-pane" id="tab_2">
+                    <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="18" [(ngModel)]="data.resultText"
                         [ngModelOptions]="{standalone: true}"></textarea>
                 </div>
             </div>
             <!-- /.tab-content -->
         </div>
 
-        <input type="text" id="hmacKey" name="hmacKey" ngModel>
-
     </div>
 
     <div class="col-md-3">
-
+        
         <div class="box box-solid">
             <div class="box-header with-border">
                 <h3 class="box-title">Options</h3>
-
-                <div class="col-md-10">
-                    <select name="mode" id="mode" class="form-control" ngModel>
-                        <option value="MD5">HMACw with MD5</option>
-                        <option value="SHA-1">HMAC with SHA-1</option>
-                        <option value="SHA-256">HMAC with SHA-256</option>
-                        <option value="SHA3-256">HMAC with SHA3-256</option>
-                        <option value="SHA-384">HMAC with SHA-384</option>
-                        <option value="SHA3-384">HMAC with SHA3-384</option>
-                        <option value="SHA-512">HMAC with SHA-512</option>
-                        <option value="SHA3-512">HMAC with SHA3-512</option>
-                    </select>
-                </div>
-
             </div>
             <!-- /.box-header -->
-            <div class="box-body text-center">
+            <div class="box-body">
+                <div class="box-body options">
+
+                    <div class="form-group">
+                        <label for="">Hashing Key</label>
+                        <input type="text" name="hmacKey" id="hmacKey" class="form-control" ngModel>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mode">Hashing Mode</label>
+                        <select name="mode" id="mode" class="form-control" ngModel>
+                            <option value="MD5">HMACw with MD5</option>
+                            <option value="SHA-1">HMAC with SHA-1</option>
+                            <option value="SHA-256">HMAC with SHA-256</option>
+                            <option value="SHA3-256">HMAC with SHA3-256</option>
+                            <option value="SHA-384">HMAC with SHA-384</option>
+                            <option value="SHA3-384">HMAC with SHA3-384</option>
+                            <option value="SHA-512">HMAC with SHA-512</option>
+                            <option value="SHA3-512">HMAC with SHA3-512</option>
+                        </select>
+                    </div>
+                </div>
             </div>
             <!-- /.box-body -->
         </div>
@@ -59,8 +63,12 @@
                 <h3 class="box-title">Actions</h3>
             </div>
             <!-- /.box-header -->
-            <div class="box-body">
-                <button type="submit" class="btn btn-primary" (click)="getHMAC(formdata)">Make HMAC</button>
+            <div class="box-body actions">
+                <div class="box-body">
+                    <button type="submit" class="btn btn-primary" (click)="getHMAC(formdata)">Make HMAC</button>
+                    <hr>
+                    <button type="submit" class="btn btn-primary">Sample String</button>
+                </div>
             </div>
             <!-- /.box-body -->
         </div>

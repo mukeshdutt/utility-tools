@@ -1,23 +1,22 @@
 <form #formdata="ngForm">
     <div class="col-md-7">
-        <h3>XML To JSON</h3>
-        <hr>
+        <p class="utility-heading">XML To JSON</p>
       <div class="nav-tabs-custom">
         <ul class="nav nav-tabs">
-          <li>
+          <li class="active">
             <a href="#tab_1" data-toggle="tab">Input Text</a>
           </li>
-          <li class="active">
+          <li>
             <a href="#tab_2" data-toggle="tab">Result Text</a>
           </li>
         </ul>
         <div class="tab-content">
-          <div class="tab-pane" id="tab_1">
-            <textarea name="input" class="form-control" placeholder="Enter xml for json..." id="input" cols="20" rows="5" ngModel></textarea>
+          <div class="tab-pane active" id="tab_1">
+            <textarea name="input" class="form-control" placeholder="Enter xml for json..." id="input" cols="20" rows="18" ngModel></textarea>
           </div>
           <!-- /.tab-pane -->
-          <div class="tab-pane active" id="tab_2">
-            <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="5" [(ngModel)]="data.resultText"
+          <div class="tab-pane" id="tab_2">
+            <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="18" [(ngModel)]="data.resultText"
             [ngModelOptions]="{standalone: true}"></textarea>
           </div>
         </div>
@@ -29,21 +28,13 @@
   
       <div class="box box-solid">
         <div class="box-header with-border">
-          <h3 class="box-title">Options</h3>
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body text-center">
-        </div>
-        <!-- /.box-body -->
-      </div>
-  
-      <div class="box box-solid">
-        <div class="box-header with-border">
           <h3 class="box-title">Actions</h3>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
             <button type="submit" class="btn btn-primary" (click)="convertToJson(formdata)">To JSON</button>
+            <hr>
+            <button type="submit" class="btn btn-primary">Sample String</button>
         </div>
         <!-- /.box-body -->
       </div>

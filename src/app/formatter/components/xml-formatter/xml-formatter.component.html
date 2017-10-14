@@ -1,24 +1,23 @@
 <form #formdata="ngForm">
   <div class="col-md-7">
-      <h3>XML Formatter</h3>
-      <hr>
+    <p class="utility-heading">XML Beautifier</p>
     <div class="nav-tabs-custom">
       <ul class="nav nav-tabs">
-        <li>
+        <li class="active">
           <a href="#tab_1" data-toggle="tab">Input Text</a>
         </li>
-        <li class="active">
+        <li>
           <a href="#tab_2" data-toggle="tab">Result Text</a>
         </li>
       </ul>
       <div class="tab-content">
-        <div class="tab-pane" id="tab_1">
-          <textarea name="input" class="form-control" placeholder="Enter ugly XML for beautify..." id="input" cols="20" rows="5" ngModel></textarea>
+        <div class="tab-pane active" id="tab_1">
+          <textarea name="input" class="form-control" placeholder="Enter ugly XML for beautify..." id="input" cols="20" rows="18" ngModel></textarea>
         </div>
         <!-- /.tab-pane -->
-        <div class="tab-pane active" id="tab_2">
-          <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="5" [(ngModel)]="data.resultText"
-          [ngModelOptions]="{standalone: true}"></textarea>
+        <div class="tab-pane" id="tab_2">
+          <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="18" [(ngModel)]="data.resultText"
+            [ngModelOptions]="{standalone: true}"></textarea>
         </div>
       </div>
       <!-- /.tab-content -->
@@ -29,23 +28,17 @@
 
     <div class="box box-solid">
       <div class="box-header with-border">
-        <h3 class="box-title">Options</h3>
-      </div>
-      <!-- /.box-header -->
-      <div class="box-body text-center">
-      </div>
-      <!-- /.box-body -->
-    </div>
-
-    <div class="box box-solid">
-      <div class="box-header with-border">
         <h3 class="box-title">Actions</h3>
       </div>
       <!-- /.box-header -->
-      <div class="box-body">
-          <button type="submit" class="btn btn-primary" (click)="makeMinify(formdata)">Validate</button>
+      <div class="box-body actions">
+        <!-- /.box-header -->
+        <button type="submit" class="btn btn-primary" (click)="makeMinify(formdata)">Validate</button>
         <button type="submit" class="btn btn-primary" (click)="makeBeautify(formdata)">Beautify</button>
-        <button type="submit" class="btn btn-primary" (click)="makeMinify(formdata)">Minify</button>        
+        <button type="submit" class="btn btn-primary" (click)="makeMinify(formdata)">Minify</button>
+        <hr>
+        <button type="submit" class="btn btn-primary">Sample String</button>
+        <!-- /.box-body -->
       </div>
       <!-- /.box-body -->
     </div>

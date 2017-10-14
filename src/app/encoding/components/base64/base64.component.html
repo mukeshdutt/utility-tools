@@ -1,7 +1,6 @@
 <form #formdata="ngForm">
   <div class="col-md-7">
-    <h3>Base64 Encoding</h3>
-    <hr>
+    <p class="utility-heading">Base64 Encoding</p>
     <div class="nav-tabs-custom">
       <ul class="nav nav-tabs">
         <li class="active">
@@ -14,11 +13,11 @@
       <div class="tab-content">
         <div class="tab-pane active" id="tab_1">
           <textarea name="input" class="form-control" placeholder="Enter text to encode or decode the string..." id="input" cols="20"
-          rows="5" ngModel></textarea>
+          rows="18" ngModel></textarea>
         </div>
         <!-- /.tab-pane -->
         <div class="tab-pane" id="tab_2">
-          <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="5" [(ngModel)]="data.resultText"
+          <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="18" [(ngModel)]="data.resultText"
           [ngModelOptions]="{standalone: true}"></textarea>
         </div>
       </div>
@@ -36,6 +35,8 @@
       <div class="box-body">
         <button type="submit" class="btn btn-primary" (click)="stringToBase64(formdata)">Encode</button>
         <button type="submit" class="btn btn-primary" (click)="base64ToString(formdata)">Decode</button>
+        <hr>
+        <button type="submit" class="btn btn-primary">Sample String</button>
       </div>
       <!-- /.box-body -->
     </div>

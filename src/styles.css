@@ -1,15 +1,12 @@
 body, div, p, ul, li, h1, h2, h3, h4, h5, h6, b {
     padding: 0;
-    margin: 0;    
+    margin: 0;
+    font-family: 'Encode Sans Expanded', sans-serif;
 }
 
-body {
-    height: 100%;
-    position: relative;     
-}
-
-textarea{
-    resize: none;
+textarea {
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+    font-size: 12px !important;
     border: 1px solid #294e80
 }
 
@@ -18,64 +15,114 @@ textarea{
 .header {
     color: #ffffff;
     background: #294e80;
-    font-family: 'Encode Sans Expanded', sans-serif;
 }
 
 .logo {
-    padding: 7px 12px 7px 30px;
+    padding: 7px 2% 7px 3%;
     font-size: 20px;
     float: left;
 }
 
-.quote{
+.quote {
     padding-top: 17px;
     font-size: 10px;
     color: #c6dff5;
     float:left;
 }
 
-.menu{
-    padding-top: 15px;
+.menu {
+    padding-top: 11px;
     font-size: 13px;
 }
 
-ul.menu>li {
+ul.menu > li {
     display: inline;
-    padding: 0 11px;
+    padding: 0 3%;
 }
 
-ul.menu>li>a {
+ul.menu > li > a {
     color: #ffffff;
     text-decoration: none;
 }
 
-ul.menu>li>a:hover {
+ul.menu > li > a:hover {
     color: #e9743e;
 }
 
-.left-menu{
-    background: #222d32;
-}
-
-.contentdata{
-    height: 580px;;
+.contents {
     padding-top: 20px;
     background: #ecf0f5;
     width: 100%;
+    min-height: calc(100vh - 70px);
     overflow: hidden;
+}
+
+.utility-heading {
+    color: #294e80; 
+    font-weight: bold;
+    padding-bottom: 17px;
+    font-size: 13px;
 }
 
 .footer {
     width: 100%;
     border-top: 1px dashed #ffffff;
-    height: 30px;
     background: #294e80;
     color: #ffffff;
     font-size: 12px;
-    bottom: 0;
-    position: absolute;
 }
 
 .footer > div {
-    padding-top: 7px;
+    padding: 7px 0;
+}
+
+.footer > .row > div {
+    text-align: center;
+}
+
+/*-------Fonts settings-----*/
+
+.alert{ font-size: 11px; }
+.alert > h4 { font-size: 16px; }
+
+.utilities-menu { font-size: 12px; }
+
+ul.nav > li > a {
+    font-size: 12px !important;
+}
+
+.options {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+button, select, option, input {
+    font-size: 12px !important;
+}
+
+.box-title {
+    font-size:15px !important;
+}
+
+@media only screen and (max-width: 479px) {
+    
+    .logo {
+        padding: 7px 2% 7px 20%;
+        font-size: 20px;
+    }
+
+    .quote {
+        padding-top: 0px;
+        padding-left: 23%;
+    }
+    
+    ul.menu {
+        padding-left: 12%;
+        padding-bottom: 13px;
+    }
+
+    .footer > .row > div {
+        text-align: center;
+        padding: 5px 0 5px 0;
+    }
 }
