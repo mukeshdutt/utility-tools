@@ -9,16 +9,40 @@ declare var X2JS: any;
 })
 export class Xml2JsonConvertorComponent {
 
-    data = { resultText: '' }
-
-    xml2json: any;
+    private xml2json: any;
+    private resultText: string
+    private errorText: string
+    private defaultInput: string
 
     constructor() {
         this.xml2json = new X2JS();
     }
 
     convertToJson(form: NgForm) {
+        
+        try{        
         let input = form.value.input;
-        this.data.resultText = JSON.stringify(this.xml2json.xml_str2json(input));
+        this.resultText = JSON.stringify(this.xml2json.xml_str2json(input));
+        this.focusOnResultTab()
+
+        } catch(err){
+            this.errorText = err
+        }
+    }
+
+    closeAlert(){
+        this.errorText = ""
+    }
+
+    setDefaultText(){
+        this.defaultInput = ""
+    }
+
+    focusOnResultTab() {
+        this.errorText = ""
+        document.getElementById("nav-tab-head-1").classList.remove('active');
+        document.getElementById("nav-tab-head-2").classList.add('active');
+        document.getElementById("tab_1").classList.remove('active');
+        document.getElementById("tab_2").classList.add('active');
     }
 }

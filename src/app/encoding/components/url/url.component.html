@@ -1,23 +1,23 @@
-<form #formdata="ngForm">
+<form #form="ngForm">
   <div class="col-md-7">
-      <p class="utility-heading">URL Encoding</p>
+    <p class="utility-heading">URL Encoding</p>
     <div class="nav-tabs-custom">
       <ul class="nav nav-tabs">
-        <li class="active">
+        <li id="nav-tab-head-1" class="active">
           <a href="#tab_1" data-toggle="tab">Input Text</a>
         </li>
-        <li>
+        <li id="nav-tab-head-2">
           <a href="#tab_2" data-toggle="tab">Result Text</a>
         </li>
       </ul>
       <div class="tab-content">
         <div class="tab-pane active" id="tab_1">
           <textarea name="input" class="form-control" id="input" placeholder="Enter URI to encode or decode..." cols="20" rows="18"
-          ngModel></textarea>
+            [ngModel]="defaultInput" required></textarea>
         </div>
         <!-- /.tab-pane -->
         <div class="tab-pane" id="tab_2">
-          <textarea class="form-control" cols="20" rows="18" placeholder="Result will be here..." [(ngModel)]="data.resultText" [ngModelOptions]="{standalone: true}"></textarea>
+          <textarea class="form-control" cols="20" rows="18" placeholder="Result will be here..." [(ngModel)]="resultText" [ngModelOptions]="{standalone: true}"></textarea>
         </div>
       </div>
       <!-- /.tab-content -->
@@ -32,10 +32,10 @@
       </div>
       <!-- /.box-header -->
       <div class="box-body">
-        <input type="button" class="btn btn-primary" value="Encode" (click)="simpleToEncodedUrl(formdata)">
-        <input type="button" class="btn btn-primary" value="Decode" (click)="encodedToSimpleUrl(formdata)">
+        <input type="button" class="btn btn-primary" [disabled]="!form.valid" value="Encode" (click)="simpleToEncodedUrl(form)">
+        <input type="button" class="btn btn-primary" [disabled]="!form.valid" value="Decode" (click)="encodedToSimpleUrl(form)">
         <hr>
-        <button type="submit" class="btn btn-primary">Sample String</button>
+        <button type="submit" class="btn btn-primary" (click)="setDefaultValue()">Sample URL</button>
       </div>
       <!-- /.box-body -->
     </div>

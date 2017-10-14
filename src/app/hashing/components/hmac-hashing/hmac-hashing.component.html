@@ -1,32 +1,43 @@
-<form #formdata="ngForm">
+<form #form="ngForm">
     <div class="col-md-7">
         <p class="utility-heading">HMAC Hashing</p>
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
-                <li class="active">
+                <li id="nav-tab-head-1" class="active">
                     <a href="#tab_1" data-toggle="tab">Input Text</a>
                 </li>
-                <li>
+                <li id="nav-tab-head-2">
                     <a href="#tab_2" data-toggle="tab">Result Text</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active" id="tab_1">
-                    <textarea name="input" class="form-control" placeholder="Enter plain text for HMAC..." id="input" cols="20" rows="18" ngModel></textarea>
+                    <textarea name="input" class="form-control" placeholder="Enter plain text for HMAC..." id="input" cols="20" rows="18" ngModel
+                        required></textarea>
                 </div>
                 <!-- /.tab-pane -->
                 <div class="tab-pane" id="tab_2">
-                    <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="18" [(ngModel)]="data.resultText"
+                    <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="18" [(ngModel)]="resultText"
                         [ngModelOptions]="{standalone: true}"></textarea>
                 </div>
             </div>
+
             <!-- /.tab-content -->
         </div>
 
+        <!-- Error Message -->
+        <div *ngIf="errorText" class="alert alert-danger">
+            <button type="button" class="close" (click)="closeAlert()">×</button>
+            <h4>
+                <i class="icon fa fa-ban"></i> Alert!</h4>
+            <br>
+            <p>{{ errorText }}</p>
+        </div>
+        <!-- / error message -->
     </div>
 
     <div class="col-md-3">
-        
+
         <div class="box box-solid">
             <div class="box-header with-border">
                 <h3 class="box-title">Options</h3>
@@ -37,20 +48,13 @@
 
                     <div class="form-group">
                         <label for="">Hashing Key</label>
-                        <input type="text" name="hmacKey" id="hmacKey" class="form-control" ngModel>
+                        <input type="text" name="hmacKey" id="hmacKey" class="form-control" ngModel required>
                     </div>
 
                     <div class="form-group">
                         <label for="mode">Hashing Mode</label>
-                        <select name="mode" id="mode" class="form-control" ngModel>
-                            <option value="MD5">HMACw with MD5</option>
-                            <option value="SHA-1">HMAC with SHA-1</option>
-                            <option value="SHA-256">HMAC with SHA-256</option>
-                            <option value="SHA3-256">HMAC with SHA3-256</option>
-                            <option value="SHA-384">HMAC with SHA-384</option>
-                            <option value="SHA3-384">HMAC with SHA3-384</option>
-                            <option value="SHA-512">HMAC with SHA-512</option>
-                            <option value="SHA3-512">HMAC with SHA3-512</option>
+                        <select name="mode" id="mode" class="form-control" [ngModel]="defaultMode">
+                            <option *ngFor="let item of modes" value="{{ item.modeValue }}">{{ item.modeText }}</option>
                         </select>
                     </div>
                 </div>
@@ -65,9 +69,7 @@
             <!-- /.box-header -->
             <div class="box-body actions">
                 <div class="box-body">
-                    <button type="submit" class="btn btn-primary" (click)="getHMAC(formdata)">Make HMAC</button>
-                    <hr>
-                    <button type="submit" class="btn btn-primary">Sample String</button>
+                    <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="getHMAC(form)">Make HMAC</button>
                 </div>
             </div>
             <!-- /.box-body -->

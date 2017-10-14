@@ -9,16 +9,40 @@ declare var X2JS: any;
 })
 export class Json2XmlConvertorComponent {
 
-    data = { resultText: '' }
-    xml2json: any;
+    private xml2json: any;
+    private resultText: string    
+    private defaultInput: string
+    private errorText: string
 
     constructor() {
         this.xml2json = new X2JS()
     }
 
     convertToXml(form: NgForm) {
+
+        try{
         let input = form.value.input;
         let json = this.xml2json.json2xml_str(JSON.parse(input));
-        this.data.resultText = json;
+        this.resultText = json;
+        this.focusOnResultTab()
+        } catch(err){
+            this.errorText = err + ". Invalid JSON, Please validate it first or be ensure JSON object propeties are be in double quotes."
+        }
+    }
+
+    setDefaultText(){
+        this.defaultInput = ""
+    }
+
+    closeAlert(){
+        this.errorText = ""
+    }
+
+    focusOnResultTab() {
+        this.errorText = ""
+        document.getElementById("nav-tab-head-1").classList.remove('active');
+        document.getElementById("nav-tab-head-2").classList.add('active');
+        document.getElementById("tab_1").classList.remove('active');
+        document.getElementById("tab_2").classList.add('active');
     }
 }

@@ -14,6 +14,7 @@ import { UrlComponent } from 'app/encoding/components/url/url.component';
     UrlComponent
   ],
   imports: [
+    BrowserModule,
     FormsModule,
     RouterModule.forRoot([
       { 'path': 'base64', component: Base64Component },

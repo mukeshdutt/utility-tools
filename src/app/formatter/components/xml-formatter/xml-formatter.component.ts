@@ -8,18 +8,44 @@ import { NgForm } from '@angular/forms';
 })
 export class XmlFormatterComponent {
 
-  data = { resultText: '' }
-
-  constructor() {
-  }
+  private resultText: string
+  private defulatInput: string
+  private errorText: string
 
   makeBeautify(form: NgForm) {
-    let input = form.value.input
-    this.data.resultText = pd.xml(input);
+
+    try{
+      let input = form.value.input
+      this.resultText = pd.xml(input);
+      this.focusOnResultTab();
+    }catch(err){
+      this.errorText = err
+    }
   }
 
   makeMinify(form: NgForm) {
-    let input = form.value.input
-    this.data.resultText = pd.xmlmin(input, '');
+    try{
+      let input = form.value.input
+      this.resultText = pd.xmlmin(input, '');
+      this.focusOnResultTab();
+    } catch(err){
+      this.errorText = err
+    }
+  }
+
+  setDefaultText() {
+    this.defulatInput = "Hello World"
+  }
+
+  closeAlert() {
+    this.errorText = ""
+  }
+
+  focusOnResultTab() {
+    this.errorText = ""
+    document.getElementById("nav-tab-head-1").classList.remove('active');
+    document.getElementById("nav-tab-head-2").classList.add('active');
+    document.getElementById("tab_1").classList.remove('active');
+    document.getElementById("tab_2").classList.add('active');
   }
 }

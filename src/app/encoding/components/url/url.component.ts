@@ -10,18 +10,32 @@ import { NgForm } from '@angular/forms';
 })
 export class UrlComponent {
 
-    data = { resultText: '' }
+    private resultText: string
+    private defaultInput: string
 
     constructor() {
     }
 
+    setDefaultValue() {
+        this.defaultInput = "my oxigen.aspx?name=ståle&car=saab";
+    }
+
     simpleToEncodedUrl(form: NgForm) {
         let input = form.value.input;
-        this.data.resultText = encodeURIComponent(input);
+        this.resultText = encodeURIComponent(input);
+        this.focusOnResultTab()
     }
 
     encodedToSimpleUrl(form: NgForm) {
         let input = form.value.input;
-        this.data.resultText = decodeURIComponent(input);
+        this.resultText = decodeURIComponent(input);
+        this.focusOnResultTab()
+    }
+
+    focusOnResultTab() {
+        document.getElementById("nav-tab-head-1").classList.remove('active');
+        document.getElementById("nav-tab-head-2").classList.add('active');
+        document.getElementById("tab_1").classList.remove('active');
+        document.getElementById("tab_2").classList.add('active');
     }
 }

@@ -1,27 +1,37 @@
-<form #formdata="ngForm">
+<form #form="ngForm">
   <div class="col-md-7">
     <p class="utility-heading">JSON Formatter</p>
     <div class="nav-tabs-custom">
       <ul class="nav nav-tabs">
-        <li class="active">
+        <li id="nav-tab-head-1" class="active">
           <a href="#tab_1" data-toggle="tab">Input Text</a>
         </li>
-        <li>
+        <li id="nav-tab-head-2">
           <a href="#tab_2" data-toggle="tab">Result Text</a>
         </li>
       </ul>
       <div class="tab-content">
         <div class="tab-pane active" id="tab_1">
-          <textarea name="input" class="form-control" placeholder="Enter ugly JSON for beautify..." id="input" cols="20" rows="18" ngModel></textarea>
+          <textarea name="input" class="form-control" placeholder="Enter ugly JSON for beautify..." id="input" cols="20" rows="18" [ngModel]="defulatInput" required></textarea>
         </div>
         <!-- /.tab-pane -->
         <div class="tab-pane" id="tab_2">
-          <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="18" [(ngModel)]="data.resultText"
+          <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="18" [(ngModel)]="resultText"
             [ngModelOptions]="{standalone: true}"></textarea>
         </div>
       </div>
       <!-- /.tab-content -->
     </div>
+
+    <div *ngIf="errorText" class="alert alert-danger">
+        <button type="button" class="close" (click)="closeAlert()">×</button>
+        <h4>
+            <i class="icon fa fa-ban"></i> Alert!</h4>
+        <br>
+        <p>{{ errorText }}</p>
+    </div>
+    <!-- / error message -->
+
   </div>
 
   <div class="col-md-3">
@@ -32,11 +42,11 @@
       </div>
       <!-- /.box-header -->
       <div class="box-body">
-        <button type="submit" class="btn btn-primary" (click)="makeMinify(formdata)">Validate</button>
-        <button type="submit" class="btn btn-primary" (click)="makeBeautify(formdata)">Beautify</button>
-        <button type="submit" class="btn btn-primary" (click)="makeMinify(formdata)">Minify</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="makeMinify(form)">Validate</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="makeBeautify(form)">Beautify</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="makeMinify(form)">Minify</button>
         <hr>
-        <button type="submit" class="btn btn-primary">Sample String</button>
+        <button type="submit" class="btn btn-primary" (click)="setDefaultText()">Sample String</button>
       </div>
       <!-- /.box-body -->
     </div>
