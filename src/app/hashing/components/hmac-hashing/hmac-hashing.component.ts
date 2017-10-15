@@ -45,7 +45,7 @@ export class HmacHashingComponent {
       this.focusOnResultTab()
 
     } catch (err) {
-      this.errorText = "Some problem has been occurred. (" + err + ")"
+      this.errorText = "The problem has occurred with this entered input text, selected mode and key, Please send this info to the development team to rectify the same issue.";
     }
   }
 

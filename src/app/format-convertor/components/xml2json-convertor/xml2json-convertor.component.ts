@@ -19,23 +19,24 @@ export class Xml2JsonConvertorComponent {
     }
 
     convertToJson(form: NgForm) {
-        
-        try{        
-        let input = form.value.input;
-        this.resultText = JSON.stringify(this.xml2json.xml_str2json(input));
-        this.focusOnResultTab()
 
-        } catch(err){
+        try {
+
+            let input = form.value.input;
+            this.resultText = JSON.stringify(this.xml2json.xml_str2json(input));
+            this.focusOnResultTab()
+
+        } catch (err) {
             this.errorText = err
         }
     }
 
-    closeAlert(){
+    closeAlert() {
         this.errorText = ""
     }
 
-    setDefaultText(){
-        this.defaultInput = ""
+    setDefaultText() {
+        this.defaultInput = "<employee><name>John H</name><mobile>+1-998988938293</mobile><email>john.h@abc.com</email></employee>"
     }
 
     focusOnResultTab() {

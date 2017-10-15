@@ -11,22 +11,19 @@ export class HtmlComponent {
   private resultText: string
   private defaultInput: string
 
-  constructor() {
-  }
-
   setDefaultValue() {
-    this.defaultInput = "my oxigen.aspx?name=ståle&car=saab";
+    this.defaultInput = "<html><head><title></title><head><body>&nbsp; &copy;HTML Encoder</body></html>";
   }
 
   encodeHTML(form: NgForm) {
     let input = form.value.input;
-    this.resultText = encodeURI(input);
+    this.resultText = this.htmlEscape(input);
     this.focusOnResultTab()
   }
 
   decodeHTML(form: NgForm) {
     let input = form.value.input;
-    this.resultText = decodeURI(input);
+    this.resultText = this.htmlUnescape(input);
     this.focusOnResultTab()
   }
 
@@ -35,5 +32,23 @@ export class HtmlComponent {
     document.getElementById("nav-tab-head-2").classList.add('active');
     document.getElementById("tab_1").classList.remove('active');
     document.getElementById("tab_2").classList.add('active');
+  }
+
+  htmlEscape(text) {
+    return text
+      .replace(/&/g, '&amp;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+  }
+
+  htmlUnescape(text) {
+    return text
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&amp;/g, '&');
   }
 }

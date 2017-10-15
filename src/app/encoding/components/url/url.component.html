@@ -17,7 +17,7 @@
         </div>
         <!-- /.tab-pane -->
         <div class="tab-pane" id="tab_2">
-          <textarea class="form-control" cols="20" rows="18" placeholder="Result will be here..." [(ngModel)]="resultText" [ngModelOptions]="{standalone: true}"></textarea>
+          <textarea class="form-control" cols="20" rows="18" placeholder="Here will be expected result..." [(ngModel)]="resultText" [ngModelOptions]="{standalone: true}"></textarea>
         </div>
       </div>
       <!-- /.tab-content -->
@@ -35,7 +35,7 @@
         <input type="button" class="btn btn-primary" [disabled]="!form.valid" value="Encode" (click)="simpleToEncodedUrl(form)">
         <input type="button" class="btn btn-primary" [disabled]="!form.valid" value="Decode" (click)="encodedToSimpleUrl(form)">
         <hr>
-        <button type="submit" class="btn btn-primary" (click)="setDefaultValue()">Sample URL</button>
+        <button type="submit" class="btn btn-info" (click)="setDefaultValue()">Sample URI</button>
       </div>
       <!-- /.box-body -->
     </div>

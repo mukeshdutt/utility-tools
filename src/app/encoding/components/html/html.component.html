@@ -12,12 +12,12 @@
       </ul>
       <div class="tab-content">
         <div class="tab-pane active" id="tab_1">
-          <textarea name="input" class="form-control" placeholder="Enter string to encoded or decoded..." id="input" cols="20"
+          <textarea name="input" class="form-control" placeholder="Enter HTML Text for encoded or decoded..." id="input" cols="20"
           rows="18" [ngModel]="defaultInput" required></textarea>
         </div>
         <!-- /.tab-pane -->
         <div class="tab-pane" id="tab_2">
-          <textarea class="form-control" cols="20" rows="18" placeholder="Result will be here..." 
+          <textarea class="form-control" cols="20" rows="18" placeholder="Here will be the expected result..." 
           [(ngModel)]="resultText" [ngModelOptions]="{standalone:true}"></textarea>
         </div>
       </div>
@@ -36,7 +36,7 @@
         <input type="button" [disabled]="!form.valid" class="btn btn-primary" value="Encode" (click)="encodeHTML(form)">
         <input type="button" [disabled]="!form.valid" class="btn btn-primary" value="Decode" (click)="decodeHTML(form)">
         <hr>
-        <button type="submit" class="btn btn-primary" (click)="setDefaultValue()">Sample HTML</button>
+        <button type="submit" class="btn btn-info" (click)="setDefaultValue()">Sample HTML</button>
       </div>
       <!-- /.box-body -->
     </div>

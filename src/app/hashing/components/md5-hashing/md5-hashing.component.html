@@ -16,7 +16,7 @@
                 </div>
                 <!-- /.tab-pane -->
                 <div class="tab-pane" id="tab_2">
-                    <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="18" [(ngModel)]="resultText"
+                    <textarea name="result" placeholder="Here will be the expected result..." class="form-control" id="result" cols="20" rows="18" [(ngModel)]="resultText"
                         [ngModelOptions]="{standalone: true}"></textarea>
                 </div>
             </div>
@@ -42,7 +42,7 @@
             <div class="box-body">
                 <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="makeMd5(form)">Make MD5</button>
                 <hr>
-                <button type="submit" class="btn btn-primary" (click)="setDefaultText()">Sample Text</button>
+                <button type="submit" class="btn btn-info" (click)="setDefaultText()">Sample Text</button>
             </div>
             <!-- /.box-body -->
         </div>

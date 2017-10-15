@@ -1,4 +1,4 @@
-#Description
+# Description
 
 pd.xml(data ) - pretty print XML;
 pd.json(data) - pretty print JSON;
@@ -9,7 +9,7 @@ pd.jsonmin(data) - minify JSON text;
 pd.cssmin(data [, preserveComments] ) - minify CSS text;
 pd.sqlmin(data) - minify JSON text;
 
-##PARAMETERS:
+## PARAMETERS:
 
 @data - String; XML, JSON, CSS or SQL text to beautify;
 
@@ -17,7 +17,7 @@ pd.sqlmin(data) - minify JSON text;
 
 @Return - String;
 
-##USAGE:
+## USAGE:
 
 var pd = require('pretty-data').pd;
 var xml_pp = pd.xml(data);
@@ -29,7 +29,7 @@ var css_min = pd.cssmin(data [, true]);
 var sql_pp = pd.sql(data);
 var sql_min = pd.sqlmin(data);
 
-##TEST:
+## TEST:
 
 `node ./test/test_xml
 `node ./test/test_json

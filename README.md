@@ -1,6 +1,6 @@
 # UtilityTools
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.3.
+Utility tools aims to things like converter, encoder/decoder, Hashing, encryption/decryption, Validators, Beautifiers and more are at one place.
 
 ## Development server
 

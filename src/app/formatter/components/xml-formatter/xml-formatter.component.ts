@@ -14,27 +14,32 @@ export class XmlFormatterComponent {
 
   makeBeautify(form: NgForm) {
 
-    try{
+    try {
+
       let input = form.value.input
       this.resultText = pd.xml(input);
       this.focusOnResultTab();
-    }catch(err){
+
+    } catch (err) {
       this.errorText = err
     }
   }
 
   makeMinify(form: NgForm) {
-    try{
+    
+    try {
+
       let input = form.value.input
       this.resultText = pd.xmlmin(input, '');
       this.focusOnResultTab();
-    } catch(err){
+
+    } catch (err) {
       this.errorText = err
     }
   }
 
   setDefaultText() {
-    this.defulatInput = "Hello World"
+    this.defulatInput = "<employee><name>John H</name><mobile>+1-998988938293</mobile><email>john.h@abc.com</email></employee>"
   }
 
   closeAlert() {

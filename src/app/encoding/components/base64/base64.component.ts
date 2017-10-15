@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm, Form } from '@angular/forms'
 
 @Component({
@@ -10,9 +10,6 @@ export class Base64Component {
   private resultText: string
   private defaultInput: string
   private errorText: string
-
-  constructor() {
-  }
 
   setDefaultValue() {
     this.defaultInput = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s";
@@ -27,9 +24,11 @@ export class Base64Component {
   base64ToString(form: NgForm) {
 
     try {
+
       let input = form.value.input;
       this.resultText = atob(input);
       this.focusOnResultTab();
+
     } catch (err) {
       this.errorText = "Please enter valid Base64 text. (This string to be decoded is not correctly encoded).";
     }

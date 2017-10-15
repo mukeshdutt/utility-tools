@@ -12,12 +12,12 @@
       </ul>
       <div class="tab-content">
         <div class="tab-pane active" id="tab_1">
-          <textarea name="input" class="form-control" placeholder="Enter text to encode or decode the string..." id="input" cols="20"
+          <textarea name="input" class="form-control" placeholder="Enter text for encode or decode into base64 or in plain text..." id="input" cols="20"
             rows="18" [ngModel]="defaultInput" required></textarea>
         </div>
         <!-- /.tab-pane -->
         <div class="tab-pane" id="tab_2">
-          <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="18" [(ngModel)]="resultText"
+          <textarea name="result" placeholder="Here will be the expected result..." class="form-control" id="result" cols="20" rows="18" [(ngModel)]="resultText"
             [ngModelOptions]="{standalone: true}"></textarea>
         </div>
       </div>
@@ -26,13 +26,13 @@
 
     <!-- Error Message -->
     <div *ngIf="errorText" class="alert alert-danger">
-      <button type="button"  class="close" (click)="closeAlert()">×</button>
+      <button type="button" class="close" (click)="closeAlert()">×</button>
       <h4>
         <i class="icon fa fa-ban"></i> Alert!</h4>
       <br>
       <p>{{ errorText }}</p>
     </div>
-    
+
   </div>
 
   <div class="col-md-3">
@@ -46,7 +46,7 @@
         <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="stringToBase64(form)">Encode</button>
         <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="base64ToString(form)">Decode</button>
         <hr>
-        <button type="submit" class="btn btn-primary" (click)="setDefaultValue()">Sample Text</button>
+        <button type="submit" class="btn btn-info" (click)="setDefaultValue()">Sample Text</button>
       </div>
       <!-- /.box-body -->
     </div>

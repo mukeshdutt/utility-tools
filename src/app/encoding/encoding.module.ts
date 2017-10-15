@@ -30,5 +30,4 @@ import { UrlComponent } from 'app/encoding/components/url/url.component';
   providers: []
 })
 export class EncodingModule {
-
 }

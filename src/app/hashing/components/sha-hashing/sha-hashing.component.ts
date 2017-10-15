@@ -38,8 +38,9 @@ export class ShaHashingComponent {
       this.shaObject.update(input);
       this.resultText = this.shaObject.getHash('HEX');
       this.focusOnResultTab()
+
     } catch(err){
-      this.errorText = "Problem occured. " + err;
+      this.errorText = "The problem has occurred with this entered input text and selected mode, Please send this info to the development team to rectify the same issue.";
     }
   }
 

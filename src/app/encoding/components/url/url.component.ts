@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-// encodeURI — encodes characters that are not allowed (raw) in URLs (use it to fix up broken URIs if you can't fix them beforehand)
-// encodeURIComponent — as encodeURI plus characters with special meaning in URIs (use it to encode data for inserting into a URI)
+/*
+1. encodeURI — encodes characters that are not allowed (raw) in URLs (use it to fix up broken URIs if you can't fix them beforehand)
+
+2. encodeURIComponent — as encodeURI plus characters with special meaning in URIs (use it to encode data for inserting into a URI)
+*/
 
 @Component({
     selector: 'app-url',
@@ -13,11 +16,8 @@ export class UrlComponent {
     private resultText: string
     private defaultInput: string
 
-    constructor() {
-    }
-
     setDefaultValue() {
-        this.defaultInput = "my oxigen.aspx?name=ståle&car=saab";
+        this.defaultInput = "https://www.google.co.in/search?q=angular+4+introduction&rlz=1C1CHBF_enIN726IN726&oq=angular+4+intr&aqs=chrome.1.69i57j0l3.10742j0j1&sourceid=chrome&ie=UTF-8";
     }
 
     simpleToEncodedUrl(form: NgForm) {

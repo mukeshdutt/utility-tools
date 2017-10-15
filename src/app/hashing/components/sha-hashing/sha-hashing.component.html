@@ -12,11 +12,11 @@
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active" id="tab_1">
-                    <textarea name="input" class="form-control" placeholder="Enter plain text for HMAC..." id="input" cols="20" rows="18" ngModel required></textarea>
+                    <textarea name="input" class="form-control" placeholder="Enter plain text and select SHA mode for hash..." id="input" cols="20" rows="18" ngModel required></textarea>
                 </div>
                 <!-- /.tab-pane -->
                 <div class="tab-pane" id="tab_2">
-                    <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="18" [(ngModel)]="resultText"
+                    <textarea name="result" placeholder="Here will be the expected result..." class="form-control" id="result" cols="20" rows="18" [(ngModel)]="resultText"
                         [ngModelOptions]="{standalone: true}"></textarea>
                 </div>
             </div>

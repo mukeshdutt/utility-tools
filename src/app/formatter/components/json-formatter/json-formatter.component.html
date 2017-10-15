@@ -12,11 +12,11 @@
       </ul>
       <div class="tab-content">
         <div class="tab-pane active" id="tab_1">
-          <textarea name="input" class="form-control" placeholder="Enter ugly JSON for beautify..." id="input" cols="20" rows="18" [ngModel]="defulatInput" required></textarea>
+          <textarea name="input" class="form-control" placeholder="Enter JSON and select action what you want to do..." id="input" cols="20" rows="18" [ngModel]="defulatInput" required></textarea>
         </div>
         <!-- /.tab-pane -->
         <div class="tab-pane" id="tab_2">
-          <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="18" [(ngModel)]="resultText"
+          <textarea name="result" placeholder="Here will be the expected JSON..." class="form-control" id="result" cols="20" rows="18" [(ngModel)]="resultText"
             [ngModelOptions]="{standalone: true}"></textarea>
         </div>
       </div>
@@ -42,11 +42,11 @@
       </div>
       <!-- /.box-header -->
       <div class="box-body">
-        <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="makeMinify(form)">Validate</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!form.valid" onclick="alert('This Feature will be introduce soon..')">Validate</button>
         <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="makeBeautify(form)">Beautify</button>
         <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="makeMinify(form)">Minify</button>
         <hr>
-        <button type="submit" class="btn btn-primary" (click)="setDefaultText()">Sample String</button>
+        <button type="submit" class="btn btn-info" (click)="setDefaultText()">Sample JSON</button>
       </div>
       <!-- /.box-body -->
     </div>

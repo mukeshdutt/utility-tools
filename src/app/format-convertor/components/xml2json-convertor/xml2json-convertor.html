@@ -12,11 +12,11 @@
         </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="tab_1">
-            <textarea name="input" class="form-control" placeholder="Enter xml for json..." id="input" cols="20" rows="18" ngModel required></textarea>
+            <textarea name="input" class="form-control" placeholder="Enter XML for convert into JSON..." id="input" cols="20" rows="18" [ngModel]="defaultInput" required></textarea>
           </div>
           <!-- /.tab-pane -->
           <div class="tab-pane" id="tab_2">
-            <textarea name="result" placeholder="Here will be the result..." class="form-control" id="result" cols="20" rows="18" [(ngModel)]="resultText"
+            <textarea name="result" placeholder="Here will be the expected result..." class="form-control" id="result" cols="20" rows="18" [(ngModel)]="resultText"
             [ngModelOptions]="{standalone: true}"></textarea>
           </div>
         </div>
@@ -43,7 +43,7 @@
         <div class="box-body">
             <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="convertToJson(form)">To JSON</button>
             <hr>
-            <button type="submit" class="btn btn-primary" (click)="setDefaultText()">Sample String</button>
+            <button type="submit" class="btn btn-info" (click)="setDefaultText()">Sample XML</button>
         </div>
         <!-- /.box-body -->
       </div>
