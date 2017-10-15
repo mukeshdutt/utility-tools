@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router'
+import { RouterModule } from '@angular/router'
 
 // Components
 import { AppComponent } from './app.component';
 import { FooterComponent } from 'app/shared/components/footer.component'
 import { HeaderComponent } from 'app/shared/components/header/header.component'
 import { MenuComponent } from 'app/shared/components/menu/menu.component'
+import { HomeComponent } from 'app/shared/components/home/home.component';
 
 // Modules
 import { EncodingModule } from 'app/encoding/encoding.module';
@@ -22,7 +23,8 @@ import { FormatterModule } from 'app/formatter/formatter.module';
     AppComponent,
     HeaderComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,11 @@ import { FormatterModule } from 'app/formatter/formatter.module';
     FormatConvertorModule,
     HashingModule,
     NumberConvertorModule,
-    OtherUtilityModule    
+    OtherUtilityModule,
+    RouterModule.forRoot([
+      { path: '', redirectTo: '/home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
