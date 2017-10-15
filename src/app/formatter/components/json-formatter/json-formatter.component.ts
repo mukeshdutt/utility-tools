@@ -9,9 +9,9 @@ import { NgForm } from '@angular/forms'
 })
 export class JsonFormatterComponent {
 
-  private resultText: string
-  private defulatInput: string
-  private errorText: string
+  public resultText: string
+  public defulatInput: string
+  public errorText: string
 
   makeBeautify(form: NgForm) {
 

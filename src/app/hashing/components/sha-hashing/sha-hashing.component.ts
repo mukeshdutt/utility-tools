@@ -9,11 +9,11 @@ declare var jsSHA: any;
 })
 export class ShaHashingComponent {
 
-  private shaObject: any;
-  private resultText: string
-  private errorText: string
-  private defaultMode: string
-  private modes = [
+  public shaObject: any;
+  public resultText: string
+  public errorText: string
+  public defaultMode: string
+  public modes = [
     { modeValue: 'SHA-1', modeText: 'SHA 1' },
     { modeValue: 'SHA-256', modeText: 'SHA 256' },
     { modeValue: 'SHA3-256', modeText: 'SHA3 - 256' },
@@ -27,7 +27,7 @@ export class ShaHashingComponent {
     this.defaultMode = "SHA-1"
   }
 
-  private getSHAHashed(form: NgForm) {
+  getSHAHashed(form: NgForm) {
 
     try {
 

@@ -10,11 +10,11 @@ declare var jsSHA: any;
 })
 export class HmacHashingComponent {
 
-  private shaObject: any;
-  private resultText: string
-  private defaultMode: string
-  private errorText: string
-  private modes = [
+  public shaObject: any;
+  public resultText: string
+  public defaultMode: string
+  public errorText: string
+  public modes = [
     { modeValue: 'MD5', modeText: 'HMAC with MD5' },
     { modeValue: 'SHA-1', modeText: 'HMAC with SHA-1' },
     { modeValue: 'SHA-256', modeText: 'HMAC with SHA-256' },

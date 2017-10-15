@@ -7,9 +7,9 @@ import { NgForm, Form } from '@angular/forms'
 })
 export class Base64Component {
 
-  private resultText: string
-  private defaultInput: string
-  private errorText: string
+  public resultText: string
+  public defaultInput: string
+  public errorText: string
 
   setDefaultValue() {
     this.defaultInput = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s";

@@ -13,8 +13,8 @@ import { NgForm } from '@angular/forms';
 })
 export class UrlComponent {
 
-    private resultText: string
-    private defaultInput: string
+    public resultText: string
+    public defaultInput: string
 
     setDefaultValue() {
         this.defaultInput = "https://www.google.co.in/search?q=angular+4+introduction&rlz=1C1CHBF_enIN726IN726&oq=angular+4+intr&aqs=chrome.1.69i57j0l3.10742j0j1&sourceid=chrome&ie=UTF-8";

@@ -10,9 +10,9 @@ declare var md5: any;
 })
 export class MD5HashingComponent {
 
-  private resultText: string
-  private defulatInput: string
-  private errorText: string
+  public resultText: string
+  public defulatInput: string
+  public errorText: string
 
   makeMd5(form: NgForm) {
 

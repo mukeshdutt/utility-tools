@@ -9,10 +9,10 @@ declare var X2JS: any;
 })
 export class Json2XmlConvertorComponent {
 
-    private xml2json: any;
-    private resultText: string
-    private defaultInput: string
-    private errorText: string
+    public xml2json: any;
+    public resultText: string
+    public defaultInput: string
+    public errorText: string
 
     constructor() {
         this.xml2json = new X2JS()

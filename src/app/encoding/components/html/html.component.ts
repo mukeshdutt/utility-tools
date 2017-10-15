@@ -8,8 +8,8 @@ import { NgForm } from '@angular/forms';
 })
 export class HtmlComponent {
 
-  private resultText: string
-  private defaultInput: string
+  public resultText: string
+  public defaultInput: string
 
   setDefaultValue() {
     this.defaultInput = "<html><head><title></title><head><body>&nbsp; &copy;HTML Encoder</body></html>";
