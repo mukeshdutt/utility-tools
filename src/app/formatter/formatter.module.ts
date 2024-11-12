@@ -4,8 +4,8 @@ import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser'
 
 // Components
-import { JsonFormatterComponent } from 'app/formatter/components/json-formatter/json-formatter.component';
-import { XmlFormatterComponent } from 'app/formatter/components/xml-formatter/xml-formatter.component';
+import { JsonFormatterComponent } from './components/json-formatter/json-formatter.component';
+import { XmlFormatterComponent } from './components/xml-formatter/xml-formatter.component';
 
 
 @NgModule({

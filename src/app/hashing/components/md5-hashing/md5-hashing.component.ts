@@ -10,9 +10,9 @@ declare var md5: any;
 })
 export class MD5HashingComponent {
 
-  public resultText: string
-  public defulatInput: string
-  public errorText: string
+  public resultText: string = ''
+  public defulatInput: string = ''
+  public errorText: string = ''
 
   makeMd5(form: NgForm) {
 
@@ -36,9 +36,14 @@ export class MD5HashingComponent {
   }
 
   focusOnResultTab() {
-    document.getElementById("nav-tab-head-1").classList.remove('active');
-    document.getElementById("nav-tab-head-2").classList.add('active');
-    document.getElementById("tab_1").classList.remove('active');
-    document.getElementById("tab_2").classList.add('active');
+    const navTabHead1 = document.getElementById("nav-tab-head-1");
+    const navTabHead2 = document.getElementById("nav-tab-head-2");
+    const tab1 = document.getElementById("tab_1");
+    const tab2 = document.getElementById("tab_2");
+
+    if (navTabHead1) navTabHead1.classList.remove('active');
+    if (navTabHead2) navTabHead2.classList.add('active');
+    if (tab1) tab1.classList.remove('active');
+    if (tab2) tab2.classList.add('active');
   }
 }

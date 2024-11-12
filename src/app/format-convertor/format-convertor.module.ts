@@ -3,8 +3,8 @@ import { FormsModule } from '@angular/forms'
 import { RouterModule, Route } from '@angular/router'
 import { BrowserModule } from '@angular/platform-browser'
 
-import { Xml2JsonConvertorComponent } from 'app/format-convertor/components/xml2json-convertor/xml2json-convertor.component';
-import { Json2XmlConvertorComponent } from 'app/format-convertor/components/json2xml-convertor/json2xml-convertor.component';
+import { Xml2JsonConvertorComponent } from './components/xml2json-convertor/xml2json-convertor.component';
+import { Json2XmlConvertorComponent } from './components/json2xml-convertor/json2xml-convertor.component';
 
 @NgModule({
     declarations: [

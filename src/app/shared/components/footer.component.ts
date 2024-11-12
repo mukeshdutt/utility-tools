@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
     template: `
     <footer class="footer">
         <div class="row">
-            <div class="col-md-6">Developed by NxTxN Team @ Oxigen - 2017</div>
+            <div class="col-md-6">Developed by NxTxN Team at Oxigen - 2017</div>
             <div class="col-md-6">Version 0.0.1</div>
         </div>
     </footer>
